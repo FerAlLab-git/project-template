@@ -29,7 +29,9 @@ Use `model-code-review` to review code and `dm-calibration` for calibration work
 - The folder layout and `analysis/_master.R` rule are described in `README.md`.
 - Never commit restricted data, large model outputs, `.Renviron` or `renv/library`.
   See "Never commit" in `README.md`. Do not read or summarize files under any
-  `restricted/` folder unless the user asks you to.
+  `restricted/` folder unless the user asks you to. Restricted data is often covered by a
+  data use agreement that does not allow sending it to outside services.
+  `.claude/settings.json` also blocks Claude's file tools from reading those folders.
 
 <!-- Add project-specific notes below: data sources and their access terms, how long
 key components take to run, open decisions. -->
