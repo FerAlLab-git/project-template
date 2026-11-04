@@ -60,8 +60,12 @@ Do not commit any of the following, to a private or a public repository:
 
 - **Restricted data.** Anything covered by a data use agreement, IRB protocol or
   confidentiality terms, including individual-level and linked data and anything with
-  PHI. Keep it outside the repository. If it must sit inside, put it in a folder named
-  `restricted/`, which `.gitignore` excludes anywhere in the tree.
+  PHI. Restricted data must live outside any repository folder, ideally in
+  Stanford-approved secure storage for its
+  [risk classification](https://uit.stanford.edu/guide/riskclassifications), and code
+  should read it from there through a path set in `.Renviron`. A `restricted/` folder is
+  excluded by `.gitignore` and blocked for Claude (see below), but that is only a safety
+  net for a file that ends up in the wrong place, not somewhere to keep data.
 - **Large model outputs.** Calibration runs, PSA datasets, simulated cohorts and other
   generated files. `output/` is git-ignored; regenerate outputs from the code. For a
   small output that must be versioned, add it on purpose with `git add -f`.
@@ -82,7 +86,8 @@ right away.
   file tools from reading anything under a `restricted/` folder at any depth. It also
   covers `cat`, `head` and similar commands that name the file. It does **not** stop a
   command that reads files without naming them, such as `grep -r pattern .`, or a script
-  that opens files itself. Keep restricted data outside the repository when you can.
+  that opens files itself. The rule is only a safety net: restricted data must live
+  outside any repository folder (see "Never commit").
 - **Lab plugin.** When you trust the folder, Claude Code offers the `decision-modeling`
   plugin from [FerAlLab-git/feral-lab-os](https://github.com/FerAlLab-git/feral-lab-os).
 
