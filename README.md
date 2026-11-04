@@ -74,6 +74,20 @@ commit. If something on this list is committed by mistake, deleting it in a late
 does not remove it from the history. Stop, do not push (or push again), and tell the PI
 right away.
 
+## Claude Code settings
+
+`.claude/settings.json` is shared by everyone who opens the repository in Claude Code:
+
+- **Restricted folders.** A `Read` deny rule, `Read(/**/restricted/**)`, stops Claude's
+  file tools from reading anything under a `restricted/` folder at any depth. It also
+  covers `cat`, `head` and similar commands that name the file. It does **not** stop a
+  command that reads files without naming them, such as `grep -r pattern .`, or a script
+  that opens files itself. Keep restricted data outside the repository when you can.
+- **Lab plugin.** When you trust the folder, Claude Code offers the `decision-modeling`
+  plugin from [FerAlLab-git/feral-lab-os](https://github.com/FerAlLab-git/feral-lab-os).
+
+Put personal overrides in `.claude/settings.local.json`, which is git-ignored.
+
 ## License
 
 The template is released under the MIT License. See [LICENSE](LICENSE).

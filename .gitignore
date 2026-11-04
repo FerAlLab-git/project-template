@@ -18,6 +18,9 @@ output/*
 .httr-oauth
 .secrets/
 
+# Claude Code personal settings
+.claude/settings.local.json
+
 # renv: the package library is rebuilt from renv.lock; commit renv.lock,
 # renv/activate.R and renv/settings.json only
 renv/library/
