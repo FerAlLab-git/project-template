@@ -1,0 +1,58 @@
+# ---------------------------------------------------------------------------
+# Never commit (see README, "Never commit"). These patterns are a backstop,
+# not a substitute for keeping restricted data out of the repository.
+# ---------------------------------------------------------------------------
+
+# Restricted data: anything under a folder named restricted/, anywhere
+restricted/
+
+# Large model outputs: everything in output/ (calibration runs, PSA datasets,
+# simulated cohorts). Commit a small file on purpose with `git add -f`.
+output/*
+!output/.gitkeep
+
+# Secrets and machine-specific environment
+.Renviron
+.env
+.env.*
+.httr-oauth
+.secrets/
+
+# renv: the package library is rebuilt from renv.lock; commit renv.lock,
+# renv/activate.R and renv/settings.json only
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
+
+# ---------------------------------------------------------------------------
+# R and RStudio
+# ---------------------------------------------------------------------------
+.Rhistory
+.Rapp.history
+.RData
+.RDataTmp
+.Ruserdata
+.Rproj.user/
+*-Ex.R
+/*.tar.gz
+/*.Rcheck/
+
+# knitr, R Markdown and bookdown build files
+*_cache/
+/cache/
+*.utf8.md
+*.knit.md
+report/_book/
+report/_bookdown_files/
+vignettes/*.html
+vignettes/*.pdf
+inst/doc
+rsconnect/
+
+# OS and editor files
+.DS_Store
+Thumbs.db

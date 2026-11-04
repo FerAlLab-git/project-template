@@ -1,0 +1,24 @@
+Type: Package
+Package: modelname
+Title: One-Line Description of the Decision Model
+Version: 0.0.0.9000
+Authors@R:
+    person("First", "Last", email = "first.last@example.org",
+           role = c("aut", "cre"))
+Description: One paragraph describing the decision model, the population and
+    interventions it compares, and the analysis it supports.
+License: file LICENSE
+Depends:
+    R (>= 4.1.0)
+Suggests:
+    bookdown,
+    dampack,
+    devtools,
+    knitr,
+    pkgdown,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
